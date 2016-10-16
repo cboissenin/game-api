@@ -1,0 +1,11 @@
+<p-dataTable [value]="(bossData$ | async)" [rows]="50" [paginator]="true">
+  <p-column field="id" header="Id"></p-column>
+  <p-column field="name" header="Name" [sortable]="true" [filter]="true" filterMatchMode="contains"></p-column>
+  <p-column field="level" header="Level" [sortable]="true"></p-column>
+  <p-column field="health" header="Health"></p-column>
+  <p-column header="Link">
+    <template let-item="rowData" pTemplate type="body">
+      <a [routerLink]="['/boss', item.id]">Details</a>
+    </template>
+  </p-column>
+</p-dataTable>
